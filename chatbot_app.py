@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pandas as pd
 import nltk
@@ -10,74 +10,60 @@ from sklearn.svm import SVC
 from sklearn.pipeline import make_pipeline
 import pickle
 import os
+import random
 
-# Download NLTK resources
-nltk.download('punkt_tab')
+# Initialize Flask app
+app = Flask(__name__)
+CORS(app)
+
+# Download necessary NLTK resources
+nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
-app = Flask(__name__)
-CORS(app, resources={r"/chat": {"origins": "http://localhost:3000"}})
+# Load FAQ data
+df = pd.read_csv('college_faq.csv')  # Make sure this file is present in the same directory
 
-# Load or train the model
-MODEL_PATH = 'chatbot_model.pkl'
-DATA_PATH = 'college_faq.csv'
-
-# NLP preprocessing
-stop_words = set(stopwords.words('english'))
-lemmatizer = WordNetLemmatizer()
-
-def preprocess_text(text):
+# Preprocessing function
+def preprocess(text):
     tokens = word_tokenize(text.lower())
-    tokens = [lemmatizer.lemmatize(token) for token in tokens if token.isalnum() and token not in stop_words]
-    return ' '.join(tokens)
+    stop_words = set(stopwords.words('english'))
+    lemmatizer = WordNetLemmatizer()
+    return " ".join([lemmatizer.lemmatize(word) for word in tokens if word.isalpha() and word not in stop_words])
 
-# Load dataset
-def load_data():
-    try:
-        df = pd.read_csv(DATA_PATH)
-        return df
-    except FileNotFoundError:
-        print("Dataset not found. Please create college_faq.csv")
-        return None
+# Apply preprocessing to questions
+df['processed_question'] = df['question'].apply(preprocess)
 
-# Train or load model
-def get_model():
-    if os.path.exists(MODEL_PATH):
-        with open(MODEL_PATH, 'rb') as f:
-            model = pickle.load(f)
-    else:
-        df = load_data()
-        if df is None:
-            return None
-        X = df['question'].apply(preprocess_text)
-        y = df['intent']
-        model = make_pipeline(TfidfVectorizer(), SVC(probability=True))
-        model.fit(X, y)
-        with open(MODEL_PATH, 'wb') as f:
-            pickle.dump(model, f)
-    return model
+# Load or train model
+model_path = 'chatbot_model.pkl'
+if os.path.exists(model_path):
+    with open(model_path, 'rb') as f:
+        model = pickle.load(f)
+else:
+    X = df['processed_question']
+    y = df['intent']
+    model = make_pipeline(TfidfVectorizer(), SVC(kernel='linear', probability=True))
+    model.fit(X, y)
+    with open(model_path, 'wb') as f:
+        pickle.dump(model, f)
 
-model = get_model()
-df = load_data()
-
-# Default response
-DEFAULT_RESPONSE = "I'm not sure about that. Try rephrasing or contact info@college.edu."
-
-@app.route('/')
-def index():
-    return render_template('index.html')
-
+# Define chatbot API endpoint
 @app.route('/chat', methods=['POST'])
 def chat():
-    user_input = request.json.get('message')
-    if not user_input or not model or df is None:
-        return jsonify({'response': DEFAULT_RESPONSE})
-
-    processed_input = preprocess_text(user_input)
-    intent = model.predict([processed_input])[0]
-    response = df[df['intent'] == intent]['response'].iloc[0] if intent in df['intent'].values else DEFAULT_RESPONSE
+    data = request.get_json()
+    message = data.get('message', '')
+    
+    if not message.strip():
+        return jsonify({'response': 'Please enter a valid question.'})
+    
+    processed_msg = preprocess(message)
+    intent = model.predict([processed_msg])[0]
+    
+    responses = df[df['intent'] == intent]['response'].tolist()
+    response = random.choice(responses) if responses else "Sorry, I don't have an answer for that."
+    
     return jsonify({'response': response})
 
+# Run the app
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5050, debug=True)
+    app.run(debug=True, port=5050)
