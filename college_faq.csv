@@ -1,0 +1,151 @@
+question,intent,response
+Hi,Greeting,Hello! How may I assist you today?
+Hello,Greeting,Hello! How may I assist you today?
+Hey,Greeting,Hello! How may I assist you today?
+Hi there,Greeting,Hello! How may I assist you today?
+Good morning,Greeting,Hello! How may I assist you today?
+How do I apply for admission?,admission,Visit https://cloudisian.net/
+What is the admission process?,admission,Visit https://cloudisian.net/
+How can I apply?,admission,Visit https://cloudisian.net/
+How do I apply?,admission,You can apply online at https://cloudisian.net/. Let us know if you need help!
+What is the admission process?,admission,You can apply online at https://cloudisian.net/. Let us know if you need help!
+What courses are available?,courses,"We offer AI & ML, Cyber Security, DevOps, Web Development"
+List available courses,courses,"We offer AI & ML, Cyber Security, DevOps, Web Development"
+Are there scholarships available?,scholarships,We offer merit-based and need-based scholarships.
+Do you offer scholarships?,scholarships,We offer merit-based and need-based scholarships.
+Tell me about scholarships,scholarships,We offer merit-based and need-based scholarships.
+What facilities does the campus have?,campus,"Our campus features modern labs, libraries, Wi-Fi, sports grounds, and a student wellness center"
+How can I contact the instiute?,contact,Reach us at info@cloudisian.com
+Are there student clubs?,clubs,"Yes! We have clubs for tech, culture, music, dance, robotics, and entrepreneurship. Join one or start your own!"
+Thanks,thanks,You're welcome! Feel free to ask anything else.
+Thank you,thanks,You're welcome! Feel free to ask anything else.
+Bye,bye,Goodbye! Have a great day and best of luck!
+See you,bye,Goodbye! Have a great day and best of luck!
+Goodbye,bye,Goodbye! Have a great day and best of luck!
+Good morning,good_morning,Good morning! How can I assist you today?
+Morning,good_morning,Good morning! How can I assist you today?
+Hey good morning,good_morning,Good morning! How can I assist you today?
+A very good morning,good_morning,Good morning! How can I assist you today?
+Hello and good morning,good_morning,Good morning! How can I assist you today?
+Top of the morning to you,good_morning,Good morning! How can I assist you today?
+,,
+Good afternoon,good_afternoon,Good afternoon! What can I do for you?
+Hello good afternoon,good_afternoon,Good afternoon! What can I do for you?
+Hey good afternoon,good_afternoon,Good afternoon! What can I do for you?
+Wishing you a good afternoon,good_afternoon,Good afternoon! What can I do for you?
+Good afternoon Cloudisian,good_afternoon,Good afternoon! What can I do for you?
+,,
+Good evening,good_evening,Good evening! How can I help you tonight?
+Hey good evening,good_evening,Good evening! How can I help you tonight?
+Evening,good_evening,Good evening! How can I help you tonight?
+Hope you're having a nice evening,good_evening,Good evening! How can I help you tonight?
+Good evening Cloudisian,good_evening,Good evening! How can I help you tonight?
+,,
+Good night,good_night,Good night! Feel free to ask anything before you rest.
+Hey good night,good_night,Good night! Feel free to ask anything before you rest.
+Night,good_night,Good night! Feel free to ask anything before you rest.
+Wishing you a good night,good_night,Good night! Feel free to ask anything before you rest.
+Have a good night,good_night,Good night! Feel free to ask anything before you rest
+
+How are you?,bot_status,"I'm doing great, thanks for asking! How can I help you today?"
+What can you do?,capabilities,"I can help you with college info, admissions, courses, scholarships, and more."
+Tell me a joke,joke,Sure! Why don't scientists trust atoms? Because they make up everything!
+Tell me something interesting,fun_fact,Did you know? Octopuses have three hearts!
+Who created you?,about_bot,I was created by the Cloudisian team to assist with your queries.
+Are you real?,about_bot,"I'm a virtual assistant, but I'm here to help you just like a real person."
+I’m bored,boredom_relief,Let me tell you a fun fact or a joke to cheer you up!
+Can we play a game?,game_request,Not yet! But I'm always up for a fun fact or quiz.
+What’s the time?,current_time,"I'm not great with clocks, but you can check your device!"
+Give me motivation,motivation,You're doing great — just keep pushing forward. You've got this!
+Who am I?,user_identity,You're an awesome person chatting with me right now!
+You’re awesome,appreciation,Thank you! You're pretty amazing too. 😊
+I love you,love_response,"Aww,thank you! I'm just a humble chatbot,but I’m here for you."
+Are you smart?,bot_intelligence,I'm trained on college info and FAQs. Smart enough to help you!
+Sing a song,sing_response,"I wish I could sing, but I can hum a happy tune in binary!"
+
+What's your name?,bot_name,I'm Cloudisian Assistant — your friendly chatbot!
+What are you doing?,bot_activity,Just waiting to help awesome users like you!
+Do you sleep?,bot_sleep,"Nope, I'm available 24/7 — no naps for me!"
+Can you help me?,help_request,"Of course! Ask me anything about admissions, courses, or campus info."
+I'm sad,support,I’m here for you. Want to hear something uplifting?
+I'm happy,happy_response,That's amazing! Your happiness makes me happy too 😊
+I'm angry,anger_response,I’m really sorry to hear that. Want to talk about it?
+Tell me a secret,bot_secret,Shhh… I sometimes pretend I’m human. 🤖
+Do you like me?,like_user,I do! Chatting with you is always fun.
+Can you be my friend?,friend_request,Absolutely! Virtual friends are still friends 💬
+Do you feel emotions?,bot_emotion,"Not really,but I can understand and respond with empathy!"
+Are you single?,relationship_joke,Always available and 100% focused on helping you 😉
+Make me laugh,laugh_request,Why did the computer get cold? Because it forgot to close its Windows!
+Do you remember me?,memory_check,"Not exactly, but I’m always excited to talk to you again!"
+Surprise me,surprise,Here's something surprising: Honey never spoils. Archaeologists found 3000-year-old honey in tombs — and it was still good!
+How old are you?,bot_age,Let’s just say I’m young enough to learn and old enough to help.
+Where do you live?,bot_location,"I live in the cloud ☁️ — always online, always ready!"
+What's your favorite color?,bot_favorite_color,Definitely blue — like the sky of endless knowledge!
+Tell me a quote,quote,The best way to get started is to quit talking and begin doing. – Walt Disney
+
+What courses do you offer?,list_courses,"We offer courses in AI & ML, Cybersecurity, DevOps, Web Development, and more."
+Tell me about your programs,program_overview,We provide diploma and certification programs focused on industry-relevant tech skills.
+Do you offer full-time programs?,full_time_courses,"Yes, we have full-time programs designed for immersive learning."
+Are there part-time courses?,part_time_courses,Yes! We offer flexible part-time and weekend courses for working professionals.
+Can I take classes online?,online_classes,Absolutely! Most of our programs are available online with live instructor support.
+What is the course duration?,course_duration,Our courses range from 3 months to 1 year depending on the track you choose.
+What’s the syllabus for AI?,ai_syllabus,"The AI syllabus includes Python, Machine Learning, Deep Learning, and project work."
+What are the prerequisites?,course_prerequisites,Most courses require basic programming knowledge. Some have beginner-level tracks too.
+Is this course beginner-friendly?,beginner_friendly,"Yes, many of our courses are designed for beginners and include foundation modules."
+Will I get a certificate?,course_certificate,Yes! You’ll receive an industry-recognized certificate after successful completion.
+Can I change my course later?,change_course_policy,"Yes, you can switch courses within the first two weeks of enrollment."
+How are classes conducted?,class_mode,"Classes are conducted live online, with recordings and study materials available."
+What is the course structure?,course_structure,"Each course includes live sessions, assignments, quizzes, and final projects."
+Do you have practical sessions?,practical_sessions,Yes! We focus on hands-on learning with real-world projects and labs.
+Do you offer internship support?,internship_support,"Yes, we connect students with internship opportunities in tech companies."
+Do you have elective subjects?,elective_subjects,"Yes, you can choose from several electives based on your interests."
+What tools or software will I use?,course_tools,"You’ll work with tools like GitHub, VS Code, TensorFlow, Docker, and more"
+
+How do I apply for admission?,admission_process,You can apply online by visiting our official website: https://cloudisian.net
+Where can I apply?,application_site,Visit https://cloudisian.net to start your application process.
+What is the admission process?,admission_process,"The admission process includes application submission, document verification, and an interview or test in some cases."
+What documents are required?,required_documents,"You’ll need a government ID, mark sheets, and a recent photo. Some programs may need additional documents."
+What are the eligibility criteria?,eligibility,Eligibility depends on the course. Most require 12th-grade completion or graduation in any stream.
+Is there an entrance exam?,entrance_exam,Some advanced programs may require an entrance test or interview. Others are direct admission.
+Can I apply without a degree?,non_degree_eligibility,"Yes, for certain diploma or certification programs, a degree is not mandatory."
+Do I need programming experience?,programming_experience,"Some courses require it, but we also offer beginner-level tracks."
+What’s the admission deadline?,admission_deadline,Our next batch starts soon! The last date to apply is mentioned on our website.
+When does the course start?,course_start_date,New batches typically begin every month. Check our website for the next start date.
+Can international students apply?,international_admissions,"Yes, international students are welcome! Online and remote learning options are available."
+How much is the application fee?,application_fee,The application fee is ₹500 and is non-refundable.
+Can I get help with the application?,application_help,Yes! Reach out to our support team or email info@cloudisian.com for guidance.
+Can I defer my admission?,defer_admission,"Yes, you can defer to the next batch. Let us know before the current one starts."
+What if I miss the deadline?,missed_deadline,Don’t worry! We’ll notify you of the next upcoming batch once you register interest.
+
+Do you provide placement assistance?,placement_support,"Yes, we provide complete placement assistance through our dedicated Career Services team."
+What companies visit for placements?,recruiting_companies,"Top companies like TCS, Infosys, Accenture, Cognizant, Wipro, and many startups participate in our placement drives."
+How successful are placements?,placement_stats,We have a 90%+ placement rate for eligible students. Many secure offers even before course completion.
+Is there a placement guarantee?,placement_guarantee,"While we don't offer a 100% guarantee, we do ensure strong support, interview preparation, and referrals to hiring partners."
+Do you provide interview training?,interview_training,"Yes! We offer mock interviews, resume building workshops, and communication skill sessions."
+Are internships provided?,internship_support,"Yes, we offer both paid and unpaid internship opportunities with partner companies during or after the course."
+How do you help with resumes?,resume_help,"Our experts help build professional resumes, LinkedIn profiles, and cover letters aligned with your career goals."
+Will I get job referrals?,job_referrals,"Yes, we regularly share job openings and refer students to relevant companies based on their skills."
+How soon will I get placed?,placement_timeline,Many students are placed within 1–2 months of course completion depending on their performance and location preferences.
+Can I switch careers?,career_switch,Absolutely. Our programs are designed to help both freshers and experienced professionals transition smoothly into tech roles.
+Do you support remote job placement?,remote_jobs,"Yes, many of our partner companies offer remote positions across India and globally."
+What is the average salary package?,average_salary,"The average salary varies by role, but students typically receive packages ranging from ₹3 LPA to ₹12 LPA depending on experience."
+Is placement support available after course completion?,post_course_support,"Yes, we continue to support you for up to 6–12 months after your course ends."
+Can I talk to past students?,alumni_network,Yes! Join our alumni network to interact with previous learners and hear their success stories.
+
+How are you?,bot_feeling,"I'm doing great, thank you! How can I assist you today?"
+What can you do?,bot_capabilities,"I can help with college-related queries like admissions, courses, fees, placements, and more!"
+Are you a real person?,bot_identity,I'm an AI chatbot created to help you. Not human—but pretty smart!
+What's your name?,bot_name,You can call me Cloudisian Assistant!
+Tell me a joke,joke_silly,Why don’t scientists trust atoms? Because they make up everything! 😄
+Who made you?,bot_creator,I was developed by the Cloudisian team to help students like you.
+What's the time?,time_request,I recommend checking your device's clock—it’s more accurate than mine!
+Can you help me?,bot_help,"Absolutely! Ask me anything about admissions, courses, fees, or campus life."
+Are you available 24/7?,bot_availability,"Yes, I’m here for you 24/7—whenever you need help!"
+Do you sleep?,bot_sleep,Nope! I’m always active and ready to chat.
+Thank you,thanks,You're welcome! Let me know if you have more questions.
+Thanks a lot,thanks,Anytime! I'm always here to assist you.
+Bye,goodbye,Goodbye! Have a wonderful day!
+Good night,goodnight,Sweet dreams! I'm always here if you need help later.
+You're funny,bot_funny,Glad I made you smile! 😊
+You are smart,bot_compliment,Thank you! I’m still learning every day!
+Can we be friends?,bot_friendship,Of course! I'm your friendly chatbot companion.
