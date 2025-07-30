@@ -78,6 +78,8 @@ def chat():
     intent = model.predict([processed_input])[0]
     response = df[df['intent'] == intent]['response'].iloc[0] if intent in df['intent'].values else DEFAULT_RESPONSE
     return jsonify({'response': response})
+import os
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5050, debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
