@@ -66,6 +66,10 @@ df = load_data()
 
 # Default response
 DEFAULT_RESPONSE = "I'm not sure about that. Try rephrasing or contact info@college.edu."
+@app.route("/")
+def home():
+    return "Backend is running on Render!"
+
 
 @app.route('/chat', methods=['POST'])
 def chat():
