@@ -12,7 +12,7 @@ import pickle
 import os
 
 # Download NLTK resources
-nltk.download('punkt_tab')
+nltk.download('punkt')
 nltk.download('stopwords')
 nltk.download('wordnet')
 
@@ -28,6 +28,8 @@ stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
 def preprocess_text(text):
+    if not isinstance(text, str):   # Handle NaN or non-string
+        return ""
     tokens = word_tokenize(text.lower())
     tokens = [lemmatizer.lemmatize(token) for token in tokens if token.isalnum() and token not in stop_words]
     return ' '.join(tokens)
@@ -36,6 +38,7 @@ def preprocess_text(text):
 def load_data():
     try:
         df = pd.read_csv(DATA_PATH)
+        df = df.dropna(subset=['question', 'intent', 'response'])  # Ensure no NaN rows
         return df
     except FileNotFoundError:
         print("Dataset not found. Please create college_faq.csv")
@@ -64,10 +67,6 @@ df = load_data()
 # Default response
 DEFAULT_RESPONSE = "I'm not sure about that. Try rephrasing or contact info@college.edu."
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
 @app.route('/chat', methods=['POST'])
 def chat():
     user_input = request.json.get('message')
@@ -76,9 +75,9 @@ def chat():
 
     processed_input = preprocess_text(user_input)
     intent = model.predict([processed_input])[0]
+
     response = df[df['intent'] == intent]['response'].iloc[0] if intent in df['intent'].values else DEFAULT_RESPONSE
     return jsonify({'response': response})
-import os
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
