@@ -64,9 +64,9 @@ df = load_data()
 # Default response
 DEFAULT_RESPONSE = "I'm not sure about that. Try rephrasing or contact info@college.edu."
 
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
+@app.route('/')
+def home():
+    return "Flask Chatbot API is running 🚀"
 
 @app.route('/chat', methods=['POST'])
 def chat():
